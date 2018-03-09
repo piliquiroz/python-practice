@@ -10,10 +10,6 @@ me with questions if anything is unclear.
 
 """
 
-
-# Ignore this for now, this is how we import libraries
-import unittest
-
 def is_name(s):
     """Return True when 's' is a name, False otherwise.
 
@@ -93,6 +89,9 @@ def count_palindromes(xs):
 
 #------ Ignore code after this point ------#
 
+# Ignore this for now, this is how we import libraries
+import unittest
+
 class TestProblemSolutions(unittest.TestCase):
 
     def test_is_name(self):
@@ -106,7 +105,7 @@ class TestProblemSolutions(unittest.TestCase):
 
     def test_reverse_list(self):
         self.assertEqual(reverse_list([1, 2, 3]), [3, 2, 1])
-        self.assertEqual(reverse_list('banana'), 'ananab')
+        self.assertEqual(reverse_list('banana'), list('ananab'))
 
     def test_is_palindrome(self):
         self.assertTrue(is_palindrome('Bob'))
