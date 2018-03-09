@@ -33,7 +33,7 @@ def is_name(s):
 
     Hints:
 
-    - Check out the s.isalpha() and s.islower() methods to see what they
+    - Check out the is s.isalpha() and s.islower() methods to see what they
     do.
 
     - This is a complex problem with many steps, break it down into little
@@ -54,7 +54,10 @@ def reverse_list(xs):
     - Lists have a l.reverse() method, don't use this.
 
     """
-    pass
+    out = []
+    for y in range(-1, -(len(xs)+1), -1):
+        out.append(xs[y])
+    return out
 
 
 def is_palindrome(name):
@@ -106,7 +109,7 @@ class TestProblemSolutions(unittest.TestCase):
 
     def test_reverse_list(self):
         self.assertEqual(reverse_list([1, 2, 3]), [3, 2, 1])
-        self.assertEqual(reverse_list('banana'), 'ananab')
+        self.assertEqual(reverse_list('banana'), list('ananab'))
 
     def test_is_palindrome(self):
         self.assertTrue(is_palindrome('Bob'))
