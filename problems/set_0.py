@@ -131,3 +131,7 @@ class TestProblemSolutions(unittest.TestCase):
         self.assertTrue(is_ordered([1, 2, 3]))
         self.assertTrue(is_ordered([1, 10, 13]))
         self.assertFalse(is_ordered([2, 1, 3]))
+
+
+if __name__ == '__main__':
+    unittest.main()
