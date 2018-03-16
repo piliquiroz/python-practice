@@ -22,7 +22,7 @@ def add1(i):
 def add3(i):
     """Take a number i, and return that number plus 3
 
-    Note: you are only allowed to use the add1 function, do not use + or -.
+     Note: you are only allowed to use the add1 function, do not use + or -.
 
     """
     return add1(add1(add1(i))) 
@@ -35,12 +35,16 @@ def concat_strings(a, b):
     concat_strings("hello", "world") -> "helloworld"
 
     """
-    pass
+    return a+b 
 
 
 def is_negative(i):
     """Return True if i is smaller than 0, otherwise False"""
-    pass
+    #if i < 0:
+    #    return (i < 0) # Only get here when i smaller than 0
+    #else:
+    #    return (i < 0) # Only get here when i bigger than 0
+    return i < 0
 
 
 def count_positive(xs):
@@ -49,7 +53,12 @@ def count_positive(xs):
     For example:
     count_positive([1, -3, 3, 8, -7]) -> 3
     """
-    pass
+    n = 0
+    for x in xs:
+        if x > 0:
+            n = n+1
+    return n
+    
 
 
 def reverse_tuple(a):
@@ -60,11 +69,13 @@ def reverse_tuple(a):
     reverse_tuple((2, 4)) -> (2, 4)
 
     """
-    pass
+
+    (x, y) = a
+    return (y, x)
 
 
 def is_between(i, lower, upper):
-    """Return whether number i is greater than lower, but smaller than higher.
+    """Return whether number i is greater than lower, but smaller than upper.
 
     For example:
     is_between(3, 2, 4) -> True
@@ -73,7 +84,7 @@ def is_between(i, lower, upper):
     is_between(3, 4, 2) -> False
 
     """
-    pass
+    return lower < i < upper
 
 
 def is_ordered(xs):
@@ -85,7 +96,11 @@ def is_ordered(xs):
     is_ordered([2, 1, 3]) -> False
 
     """
-    pass
+    for i in range (len(xs)-1):
+        if xs[i] > xs[i+1]:
+            return False 
+    return True 
+     
 
 
 #------ Ignore code after this point ------#
@@ -119,7 +134,7 @@ class TestProblemSolutions(unittest.TestCase):
 
     def test_reverse_tuple(self):
         self.assertEqual(reverse_tuple((1, 3)), (3, 1))
-        self.assertEqual(reverse_tuple((2, 4)), (2, 4))
+        self.assertEqual(reverse_tuple((2, 4)), (4, 2))
 
     def test_is_between(self):
         self.assertTrue(is_between(3, 2, 4))

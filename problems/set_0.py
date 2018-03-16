@@ -64,7 +64,7 @@ def reverse_tuple(a):
 
 
 def is_between(i, lower, upper):
-    """Return whether number i is greater than lower, but smaller than higher.
+    """Return whether number i is greater than lower, but smaller than upper.
 
     For example:
     is_between(3, 2, 4) -> True
@@ -119,7 +119,7 @@ class TestProblemSolutions(unittest.TestCase):
 
     def test_reverse_tuple(self):
         self.assertEqual(reverse_tuple((1, 3)), (3, 1))
-        self.assertEqual(reverse_tuple((2, 4)), (2, 4))
+        self.assertEqual(reverse_tuple((2, 4)), (4, 2))
 
     def test_is_between(self):
         self.assertTrue(is_between(3, 2, 4))
