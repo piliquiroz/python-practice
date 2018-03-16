@@ -25,7 +25,7 @@ def add3(i):
      Note: you are only allowed to use the add1 function, do not use + or -.
 
     """
-    return add1(add1(add1(i))) 
+    return add1(add1(add1(i)))
 
 
 def concat_strings(a, b):
@@ -35,7 +35,7 @@ def concat_strings(a, b):
     concat_strings("hello", "world") -> "helloworld"
 
     """
-    return a+b 
+    return a+b
 
 
 def is_negative(i):
@@ -58,7 +58,7 @@ def count_positive(xs):
         if x > 0:
             n = n+1
     return n
-    
+
 
 
 def reverse_tuple(a):
@@ -98,55 +98,15 @@ def is_ordered(xs):
     """
     for i in range (len(xs)-1):
         if xs[i] > xs[i+1]:
-            return False 
-    return True 
-     
+            return False
+    return True
+
 
 
 #------ Ignore code after this point ------#
 
-# Ignore this for now, this is how we import libraries
-import unittest
-
-class TestProblemSolutions(unittest.TestCase):
-
-    def test_id(self):
-        self.assertEqual(id("hello"), "hello")
-        self.assertEqual(id(3), 3)
-
-    def test_add1(self):
-        self.assertEqual(add1(1), 2)
-        self.assertEqual(add1(2), 3)
-
-    def test_add3(self):
-        self.assertEqual(add3(0), 3)
-        self.assertEqual(add3(1), 4)
-
-    def test_concat_strings(self):
-        self.assertEqual(concat_strings("foo", "bar"), "foobar")
-
-    def test_is_negative(self):
-        self.assertTrue(is_negative(-3))
-        self.assertFalse(is_negative(3))
-
-    def test_count_positive(self):
-        self.assertEqual(count_positive([1, -3, 3, 8, -7]), 3)
-
-    def test_reverse_tuple(self):
-        self.assertEqual(reverse_tuple((1, 3)), (3, 1))
-        self.assertEqual(reverse_tuple((2, 4)), (4, 2))
-
-    def test_is_between(self):
-        self.assertTrue(is_between(3, 2, 4))
-        self.assertFalse(is_between(3, 3, 4))
-        self.assertFalse(is_between(3, 2, 3))
-        self.assertFalse(is_between(3, 4, 2))
-
-    def test_is_ordered(self):
-        self.assertTrue(is_ordered([1, 2, 3]))
-        self.assertTrue(is_ordered([1, 10, 13]))
-        self.assertFalse(is_ordered([2, 1, 3]))
-
-
 if __name__ == '__main__':
-    unittest.main()
+    from tests import test_set_0
+    import sys
+    this = sys.modules[__name__]
+    test_set_0.run(this)
