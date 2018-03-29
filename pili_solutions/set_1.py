@@ -36,7 +36,17 @@ def is_name(s):
     steps first, then solve each little step.
 
     """
-    pass
+    # import ipdb; ipdb.set_trace()
+
+    words = s.split()
+    if len(words) != 2:
+        return False
+
+    for wd in words:
+        if wd[0].islower() or not wd.isalpha():
+            return False
+
+    return True
 
 
 def reverse_list(xs):
@@ -76,7 +86,7 @@ def is_palindrome(name):
     Tip:
     - Use your reverse_list function from earlier.
     """
-    pass
+    return reverse_list(name.lower()) == list(name.lower())
 
 
 def count_palindromes(xs):
@@ -88,7 +98,11 @@ def count_palindromes(xs):
     count_palindromes(['three', 'apples', 'Abba']) --> 1
 
     """
-    pass
+    out = 0
+    for x in xs:
+        if is_palindrome(x):
+            out = out + 1
+    return out
 
 #------ Ignore code after this point ------#
 
