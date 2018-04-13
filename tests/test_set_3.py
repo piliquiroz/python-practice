@@ -40,7 +40,7 @@ def run(m):
         def test_import_dame_cinco(self):
             self.assertEqual(m.import_dame_cinco()(), 5)
 
-        def test_read_foo():
+        def test_read_foo(self):
             self.assertEqual(m.read_foo(), "This is the contents of foo.txt\n")
 
 
